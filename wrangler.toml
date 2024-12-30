@@ -1,0 +1,6 @@
+name = "test-val-ing-msg"
+main = "build/worker/shim.mjs"
+compatibility_date = "2024-12-30"
+
+[build]
+command = "cargo install -q worker-build && worker-build --release"

@@ -1,0 +1,23 @@
+[package]
+name = "test-val-ing-msg"
+version = "0.1.0"
+edition = "2021"
+authors = [ "rupansh <rupanshsekar@hotmail.com>" ]
+
+[package.metadata.release]
+release = false
+
+# https://github.com/rustwasm/wasm-pack/issues/1247
+[package.metadata.wasm-pack.profile.release]
+wasm-opt = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+worker = { version="0.5.0" }
+worker-macros = { version="0.5.0" }
+console_error_panic_hook = { version = "0.1.1" }
+ic-validator-ingress-message = { git = "https://github.com/dfinity/ic.git", rev = "5716305a58110031dac133f7182b1e3efd50257e" }
+ic-types = { git = "https://github.com/dfinity/ic.git", rev = "5716305a58110031dac133f7182b1e3efd50257e" }
+getrandom = { version = "0.2.15", features = ["js"] }
